@@ -1,0 +1,28 @@
+<div class="page-content vertical">
+    <div class="modal-box has-shadow rounded">
+        <h2 class="has-text-main is-title-large">REGISTER</h2>
+        <form action="">
+            <div class="icon-container horizontal">
+                <i class="fas fa-file-signature has-text-primary">:</i>
+                <input #name class="no-border has-shadow rounded" type="text" id="name" name="name" placeholder="enter a name" autocomplete="name">
+            </div>
+            <div class="icon-container horizontal">
+                <i class="fas fa-user has-text-primary">:</i>
+                <input #username class="no-border has-shadow rounded" type="text" id="username" name="usename" placeholder="enter a username" autocomplete="username">
+            </div>
+            <div class="icon-container horizontal">
+                <i class="fas fa-paragraph has-text-primary">:</i>
+                <textarea #description class="no-border has-shadow rounded" id="description" name="description" placeholder="enter a description" rows="10" cols="30" autocomplete="description"></textarea>
+            </div>        
+            <div class="icon-container horizontal">
+                <i class="fas fa-lock has-text-primary">:</i>
+                <input #password class="no-border has-shadow rounded" type="password" id="password" name="password" placeholder="enter a password" autocomplete="current-password">
+            </div>            
+        </form>
+        <p class="has-text-primary">Already have an account? <br><a [routerLink]="'/login'">SING IN</a> <br> here</p>
+        <div class="buttons-container horizontal">
+            <button class="rounded no-border btn has-bg has-text-secondary" (click)="OnRegisterClicked(name.value, username.value, description.value, password.value)">SING UP</button>
+        </div>        
+        
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="page-content vertical">
+    <div class="background-container vertical rounded has-shadow">
+        <section class="header vertical has-text-main is-title-large">
+            <h2>CONTACTS</h2>
+    
+            <form action="">
+                <div class="input-with-icon">
+                    <input #search type="search" name="search" id="search" placeholder="Enter to search" class="has-shadow no-border rounded" (change)="SearchForFriends(search.value)">                
+                    <div class="input-icon-container has-text-primary">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <section class="friends-container has-text-secondary">
+            <h3 class="has-text-secondary is-subtitle-large">Friends</h3>
+            <hr>
+            <div class="modal-box horizontal scroll-horizontally">
+                <div class="friend has-shadow rounded" *ngFor="let friend of Temp">
+                    <img class="circle" src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="Friend Picture">
+                    <h3 class="has-text-main is-subtitle-small">{{friend.name}}</h3>
+                    <div class="options horizontal">
+                        <a class="has-text-main" (click)="startChat(friend._id)"><i class="fas fa-comment-dots"></i></a>
+                        <a class="has-text-main" (click)="removeFriend(friend._id)"><i class="fas fa-trash has-text-primary"></i></a>
+                    </div>
+                </div>                                                                                           
+            </div>
+        </section>
+        <section class="add-friend-container">
+            <h3 class="has-text-secondary is-subtitle-large">Add Friends</h3>
+            <hr>
+            <div class="modal-box vertical scroll-vertically">
+                <div class="friend has-shadow rounded horizontal" *ngFor="let user of AllUsers">
+                    <div class="user horizontal">
+                        <img class="circle" src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="Friend Picture">
+                        <h3 class="has-text-main is-subtitle-large">{{user.name}}</h3>
+                    </div>
+                    <a class="has-text-main" (click)="addFriend(user._id)"><i class="fas fa-plus"></i></a>
+                </div>                             
+            </div>
+        </section>
+    </div>
+</div>

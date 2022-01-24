@@ -1,0 +1,47 @@
+.container
+{
+    margin: 0px 40px 0px 0px;
+
+    height: 909px;
+
+    padding: 10px 30px;
+
+    .profile-pic
+    {
+        margin: 30px 0px;
+
+        img
+        {
+            height: 78px;
+            width: 78px;
+        }
+    }
+}
+
+.icons-container
+{
+
+    font-size: 2em;
+
+    justify-content: space-evenly;
+    align-items: center;
+
+    a
+    {
+        text-decoration: none;
+        transition: transform ease 1.5s;
+
+        &:hover
+        {
+            transform: scale(0.9);
+            opacity: 0.8;
+        }
+    }
+
+    i
+    {
+        margin: 40px 0px;
+    }
+
+    height: 80%;
+}

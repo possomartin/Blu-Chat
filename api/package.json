@@ -1,0 +1,24 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Back END for chat app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index && set NODE_ENV=development"
+  },
+  "author": "Martin Posso",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongodb-session": "^3.1.1",
+    "dotenv": "^14.2.0",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.1.7",
+    "mongoose-express-session": "^0.0.5",
+    "multer": "^1.4.4",
+    "nodemon": "^2.0.15",
+    "socket.io": "^4.4.1"
+  }
+}

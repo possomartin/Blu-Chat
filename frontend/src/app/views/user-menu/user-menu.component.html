@@ -1,0 +1,12 @@
+<div class="container has-bg" *ngIf="UserLogin">
+    <div class="profile-pic">
+        <img class="circle" src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="Profile Pic">
+    </div>
+    <div class="icons-container has-text-secondary vertical">
+        <a class="has-text-secondary" routerLink="/blu-chat"><i class="fas fa-comments"></i></a>
+        <a class="has-text-secondary" routerLink="/address-book"><i class="fas fa-address-book"></i></a>
+        <a class="has-text-secondary" (click)="OnLogOutClicked()"><i class="fas fa-sign-out-alt"></i></a>
+        <a class="has-text-secondary" routerLink="/profile"><i class="fas fa-cog"></i></a>
+    </div>
+
+</div>

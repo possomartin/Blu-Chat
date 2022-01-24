@@ -1,0 +1,21 @@
+<div class="page-content vertical">
+    <div class="modal-box has-shadow rounded">
+        <h2 class="has-text-main is-title-large">LOGIN</h2>
+        <form action="">
+            <div class="icon-container horizontal">
+                <i class="fas fa-user has-text-primary">:</i>
+                <input #username class="no-border has-shadow rounded" type="text" id="username" name="usename" placeholder="enter a username" autocomplete="username">
+            </div>
+            <div class="icon-container horizontal">
+                <i class="fas fa-lock has-text-primary">:</i>
+                <input #password class="no-border has-shadow rounded" type="password" id="password" name="password" placeholder="enter a password" autocomplete="current-password">
+            </div>            
+        </form>
+        <p class="has-text-primary">Don't have an account yet? <br><a [routerLink]="'/register'">SING UP</a> <br> here</p>
+        <div class="buttons-container horizontal">
+            <button class="rounded no-border btn" [routerLink]="'/register'">CANCEL</button>
+            <button class="rounded no-border btn has-bg has-text-secondary" (click)="OnLoginClicked(username.value, password.value)">SING IN</button>
+        </div>        
+        
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="page-content vertical">
+    <div class="modal-box has-shadow rounded">
+        <h2 class="has-text-main is-title-large">Profile</h2>
+        <div class="icon-container horizontal">
+            <i class="fas fa-file-signature has-text-primary">:</i>
+            <input class="no-border has-shadow rounded" type="text" id="username" name="usename" placeholder="enter a username">
+        </div>
+        <div class="icon-container horizontal">
+            <i class="fas fa-paragraph has-text-primary">:</i>
+            <textarea class="no-border has-shadow rounded" id="description" name="description" placeholder="enter a description" rows="10" cols="30"></textarea>
+        </div>
+        <div class="icon-container horizontal">
+            <i class="fas fa-image has-text-primary">:</i>
+            <input class="no-border has-shadow rounded" type="file" id="image" name="image" >
+        </div>                              
+        <div class="buttons-container horizontal">
+            <button class="rounded no-border btn" [routerLink]="'/blu-chat'">CANCEL</button>
+            <button class="rounded no-border btn has-bg has-text-secondary">EDIT</button>
+        </div>           
+        
+    </div>
+</div>

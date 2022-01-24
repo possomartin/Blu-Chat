@@ -1,0 +1,96 @@
+.page-content
+{
+    height: 100vh;
+    width: 100vh;
+
+    justify-content: center;
+
+    margin: 0px 40%;
+
+}
+
+.background-container
+{
+    justify-content: center;
+    padding: 0px 20px;
+
+    height: 90%;
+    max-height: 90%;
+}
+
+.input-with-icon
+{
+    margin: 0px 10%;
+    input
+    {
+        width: 700px;
+    }
+
+}
+
+.user
+{
+    max-height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-friend-container
+{
+    .modal-box
+    {
+        max-height: 120px;
+    }
+}
+
+.friends-container
+{
+    .modal-box
+    {
+        max-height: 180px;
+        overflow-y: hidden;
+    }
+}
+
+.modal-box
+{
+    padding: 10px 40px;
+
+    .friend
+    {
+        height: fit-content;
+        margin: 10px 15px;
+        padding: 10px 20px;
+        text-align: center;
+        align-items: center;
+        justify-content: space-between;
+    
+        img
+        {
+            height: 78px;
+            width: 78px;
+        }
+
+        h3
+        {
+            margin: 10px 30px;
+        }
+
+        a
+        {
+            font-size: 20px;
+            margin: 0px 30px;
+
+            text-decoration: none;
+            transition: transform ease 1.5s;
+
+            &:hover
+            {
+                transform: scale(0.9);
+                color: blue;
+            }
+        }
+    }
+}
+
+

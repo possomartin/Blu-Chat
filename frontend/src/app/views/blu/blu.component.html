@@ -1,0 +1,58 @@
+<div class="page-content horizontal">
+    <section class="contact-list-container vertical has-shadow rounded">
+        <div class="seach-bar-container">
+            <div class="input-with-icon">
+                <input class="rounded has-shadow no-border search-bar" type="search" name="search" id="seach-bar" placeholder="Enter to search">
+                <div class="input-icon-container">
+                    <i class="fas fa-search has-text-primary"></i>
+                </div>
+            </div>
+        </div>
+        <div class="contact-container vertical">
+            <div class="contact horizontal rounded has-shadow" *ngFor="let chat of Chats" routerLinkActive="is-active" [routerLink]="['/blu-chat', chat._id]">
+                <div class="img-container vertical">
+                    <img class="img circle" src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="Contact Image">
+                </div>
+                <div class="text" *ngIf="chat.user._id === User._id">
+                    <h2 class="has-text-main">{{chat.contact.name}}</h2>
+                    <p class="has-text time">{{chat.dateCreated}}</p>
+                </div>
+                <div class="text" *ngIf="chat.contact._id === User._id">
+                    <h2 class="has-text-main">{{chat.user.name}}</h2>
+                    <p class="has-text time">{{chat.dateCreated}}</p>
+                </div>                
+            </div>                                            
+        </div>
+    </section>
+    <section class="chats-container">
+        <div class="user-container has-shadow rounded horizontal">
+                <div class="img-container vertical">
+                    <img class="img circle" src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="Contact Image">
+                </div>
+                <div class="text" *ngIf="Chat && Chat.user._id === User._id">
+                    <h2 class="has-text-main">{{Chat.contact.name}}</h2>
+                    <p class="has-text description">{{Chat.contact.description}}</p>
+                </div>
+                <div class="text" *ngIf="Chat && Chat.contact._id === User._id">
+                    <h2 class="has-text-main">{{Chat.user.name}}</h2>
+                    <p class="has-text description">{{Chat.user.description}}</p>
+                </div>                
+        </div>
+        <div class="messenger-container vertical has-shadow rounded">
+            <div class="chats vertical">
+                <div class="chat rounded has-shadow" *ngFor="let message of Messages" [ngClass]="message.sender._id === User._id ? 'right has-bg has-text' : 'left has-bg-light has-text-main'" >
+                    <p class="message">{{message.message}}</p>
+                    <p class="time">{{message.dateSent}}</p>
+                </div>                                                                                                                  
+            </div>
+            <div class="send-bar vertical">
+                <div class="input-with-button">
+                    <input #message class="has-shadow rounded no-border" type="text" id="send-message" name="send-message" placeholder="Enter message to send">
+                    <div class="button-container">
+                        <button class="btn rounded no-border has-text-main" (click)="sendMessage(message.value)"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

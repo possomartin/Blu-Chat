@@ -1,0 +1,221 @@
+/* Import Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,100;1,300&display=swap');
+
+/* Variables */
+
+$main: #6127D6;
+$text: #CCCCCC;
+
+$light: #707070;
+$link: #6127D6;
+
+$primary: #818181;
+$secondary: #BCBCBC;
+
+
+/* Font */
+
+h1, h2, h3, h4, h5, h6
+{
+    font-family: 'Italiana', sans-serif;
+}
+
+p
+{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Structure */
+
+.vertical
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.horizontal
+{
+    display: flex;
+    flex-direction: row;
+}
+
+/* Border */
+
+.no-border
+{
+    border: none;
+}
+
+.rounded
+{
+    border-radius: 20px;
+}
+
+.circle
+{
+    border-radius: 50%;
+}
+
+/* Box-shadow */
+
+.has-shadow
+{
+    box-shadow: 0px 2px 3px 4px grey;
+}
+
+/* Text */
+.has-text-main
+{
+    color: $main;
+}
+
+.has-text
+{
+    color: $text;
+}
+
+.has-text-primary
+{
+    color: $primary;
+}
+
+.has-text-secondary
+{
+    color: $secondary;
+}
+
+.has-text-link
+{
+    color: $link;
+}
+
+.has-text-light
+{
+    color: $light;
+}
+
+/* Font Size */
+.is-title-large
+{
+    letter-spacing: 2px;
+    font-size: 3em;
+}
+
+.is-title-small
+{
+    letter-spacing: 2px;
+    font-size: 2em;
+}
+
+.is-subtitle-large
+{
+    letter-spacing: 2px;
+    font-size: 1.5em;
+}
+
+.is-subtitle-small
+{
+    letter-spacing: 2px;
+    font-size: 1em;
+}
+
+/* Background */
+.has-bg
+{
+    background: $main;
+}
+
+.has-bg-primary
+{
+    background: $primary;
+}
+
+.has-bg-secondary
+{
+    background: $secondary;
+}
+
+/* Custom Scroll Bar */
+
+::-webkit-scrollbar
+{
+    width: 10px;
+    height: 5px;
+}
+
+/* track */
+
+::-webkit-scrollbar-track
+{
+    border: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb
+{
+    background: $secondary;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $text;
+  }
+
+/* Buttons */
+
+.btn
+{
+    padding: 7px 15px;
+    transition: transform ease 1.5s;
+
+    &:hover
+    {
+        background: $secondary;
+        color: $link;
+        transform: scale(0.9);
+    }
+}
+
+/* Input with Icon */
+
+.input-with-icon
+{
+    position: relative;
+
+    input
+    {
+        padding: 10px 40px;
+        margin: 0px;
+
+        &:focus
+        {
+            outline: none;
+        }
+    }
+
+}
+
+.input-icon-container
+{
+    position: absolute;
+
+    font-size: 20px;
+    z-index: 999;
+    top: 0;
+    margin: 28px 10px;
+}   
+
+/* Scrollable Component */
+
+.scroll-horizontally
+{
+    overflow-x: scroll;
+}
+
+.scroll-vertically
+{
+    overflow-y: scroll;
+}
