@@ -9,7 +9,7 @@ import { ChatService } from 'src/app/services/chat.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-
+  
   constructor(private chatService: ChatService, private router: Router, private auth: AuthService) { }
 
   ngOnInit(): void {

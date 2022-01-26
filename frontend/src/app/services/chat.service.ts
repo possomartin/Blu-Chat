@@ -5,7 +5,6 @@ import { WebRequestService } from './web-request.service';
   providedIn: 'root'
 })
 export class ChatService {
-
   constructor(private webRequest: WebRequestService) { }
 
   /*** USERS */

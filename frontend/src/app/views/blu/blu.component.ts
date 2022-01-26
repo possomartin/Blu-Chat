@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { ChatService } from 'src/app/services/chat.service';
 import {io} from 'socket.io-client';
+import { ChatService } from 'src/app/services/chat.service';
 
 @Component({
   selector: 'app-blu',
   templateUrl: './blu.component.html',
   styleUrls: ['./blu.component.scss']
 })
-
 export class BluComponent implements OnInit {
 
   ContactList!: any[];
@@ -20,7 +19,7 @@ export class BluComponent implements OnInit {
 
   User!: any;
 
-  socket = io();
+  socket = io('http://localhost:3000', {withCredentials: true, transports: ["websocket"]});
 
   constructor(private chatService: ChatService, private route: ActivatedRoute) { }
 
@@ -33,16 +32,14 @@ export class BluComponent implements OnInit {
     this.getAllChats();
 
     this.route.params.subscribe((params: Params) => {
-      if(params.id)
+      if(params['id'])
       {
-        this.SelectedChat = params.id;
-        this.getAllMessages(params.id);
-        this.getChatByID(params.id);
+        this.SelectedChat = params['id'];
+        this.getAllMessages(params['id']);
+        this.getChatByID(params['id']);
+        this.getNewMessages();
       }
     });
-
-    this.getNewMessages();
-    
   }
 
   getAllChats()
@@ -77,10 +74,21 @@ export class BluComponent implements OnInit {
 
   sendMessage(message: string)
   {
-    this.chatService.sendMessage(this.User._id, this.Chat.contact._id, message, this.Chat._id).subscribe(message => {
-      this.socket.emit('save-message', `Message - Sent by: ${this.User._id}`);
-      this.ngOnInit();
-    });
+    if(this.User._id === this.Chat.user._id)
+    {
+      this.chatService.sendMessage(this.User._id, this.Chat.contact._id, message, this.Chat._id).subscribe(message => {
+        this.socket.emit('save-message', `Message - Sent by: ${this.User._id}, dice: ${message}`);
+        this.ngOnInit();
+      });
+    }
+
+    if(this.User._id === this.Chat.contact._id)
+    {
+      this.chatService.sendMessage(this.User._id, this.Chat.user._id, message, this.Chat._id).subscribe(message => {
+        this.socket.emit('save-message', `Message - Sent by: ${this.User._id} dice:`, message);
+        this.ngOnInit();
+      });      
+    }
   }
 
   getNewMessages()
@@ -89,5 +97,4 @@ export class BluComponent implements OnInit {
       this.getAllMessages(this.Chat._id);
     });
   }
-
 }

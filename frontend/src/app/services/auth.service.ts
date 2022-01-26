@@ -1,7 +1,7 @@
 import { HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { shareReplay, tap } from 'rxjs/operators';
+import { shareReplay, tap } from 'rxjs';
 import { CommonService } from './common.service';
 import { WebRequestService } from './web-request.service';
 
@@ -9,6 +9,7 @@ import { WebRequestService } from './web-request.service';
   providedIn: 'root'
 })
 export class AuthService {
+
 
   authToken: any;
   user: any;
